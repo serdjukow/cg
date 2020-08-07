@@ -12,26 +12,6 @@
 </head>
 <body>
 	<main class="main">
-		<section class="news">
-			<div class="">
-				<h1>
-					<a id="services" href="#"></a>
-					Our Services
-				</h1>
-				<div class="thumb-wrap">
-					<!------news-block------->
-					<video controls="controls" width="400" height="300" poster="images/.png" autoplay loop>
-						<source src="video/main_1.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'><!-- MP4 для Safari, IE9, iPhone, iPad, Android, и Windows Phone 7 -->
-						<source src="video/main_1.webm" type='video/webm; codecs="vp8, vorbis"'><!-- WebM/VP8 для Firefox4, Opera, и Chrome -->
-						<source src="video/main_1.ogv" type='video/ogg; codecs="theora, vorbis"'><!-- Ogg/Vorbis для старых версий браузеров Firefox и Opera -->
-						<object data="video/main_1.swf" type="application/x-shockwave-flash"><!-- добавляем видеоконтент для устаревших браузеров, в которых нет поддержки элемента video -->
-							<param name="movie" value="video/main_1.swf">
-						</object>
-					</video>
-					<!-----/news-block------->
-				</div>
-			</div>
-		</section>
 		<!----------news----------->
 		<section class="news">
 			<div class="">
@@ -64,6 +44,26 @@
 			</div>
 		</section>
 		<!----------/news----------->
+		<section class="news">
+			<div class="">
+				<h1>
+					<a id="services" href="#"></a>
+					Our Services
+				</h1>
+				<div  class="thumb-wrap">
+					<!------news-block------->
+					<video id="target" controls="controls" width="400" height="300" loop>
+						<source src="video/main_1.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'><!-- MP4 для Safari, IE9, iPhone, iPad, Android, и Windows Phone 7 -->
+						<source src="video/main_1.webm" type='video/webm; codecs="vp8, vorbis"'><!-- WebM/VP8 для Firefox4, Opera, и Chrome -->
+						<source src="video/main_1.ogv" type='video/ogg; codecs="theora, vorbis"'><!-- Ogg/Vorbis для старых версий браузеров Firefox и Opera -->
+						<object data="video/main_1.swf" type="application/x-shockwave-flash"><!-- добавляем видеоконтент для устаревших браузеров, в которых нет поддержки элемента video -->
+							<param name="movie" value="video/main_1.swf">
+						</object>
+					</video>
+					<!-----/news-block------->
+				</div>
+			</div>
+		</section>
 		<div class="body_bg">
 			<section class="customers">
 				<div class="wrapper customers-block">
@@ -147,8 +147,6 @@
 		<section class="contact__block">
 			<div class="contact__row">
 				<div class="contact__column map">
-					<iframe src="https://yandex.ru/map-widget/v1/-/CCbgYPKl" allowfullscreen="true" width="100%" height="470px"
-						frameborder="1"></iframe>
 				</div>
 				<div class="contact__column">
 					<div class="contact-info">
@@ -242,5 +240,47 @@
 	</main>
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 	<script src="js/main.js"></script>
+
+
+
+<script>
+// получаем элемент video
+var videoEl = document.getElementsByTagName('video')[0]
+
+var element = document.querySelector('#target');
+var Visible =  function (target) {
+  // Все позиции элемента
+  var targetPosition = {
+      top: window.pageYOffset + target.getBoundingClientRect().top,
+      left: window.pageXOffset + target.getBoundingClientRect().left,
+      right: window.pageXOffset + target.getBoundingClientRect().right,
+      bottom: window.pageYOffset + target.getBoundingClientRect().bottom
+    },
+    // Получаем позиции окна
+    windowPosition = {
+      top: window.pageYOffset,
+      left: window.pageXOffset,
+      right: window.pageXOffset + document.documentElement.clientWidth,
+      bottom: window.pageYOffset + document.documentElement.clientHeight
+    };
+  if (targetPosition.bottom > windowPosition.top && // Если позиция нижней части элемента 				больше позиции верхней чайти окна, то элемент виден сверху
+    targetPosition.top < windowPosition.bottom && // Если позиция верхней части элемента меньше позиции нижней чайти окна, то элемент виден снизу
+    targetPosition.right > windowPosition.left && // Если позиция правой стороны элемента больше позиции левой части окна, то элемент виден слева
+		targetPosition.left < windowPosition.right) { // Если позиция левой стороны элемента меньше позиции правой чайти окна, то элемент виден справа			
+		// Если элемент полностью видно, то запускаем следующий код
+		videoEl.play();
+  } else {
+    // Если элемент не видно, то запускаем этот код
+    videoEl.pause();
+  };
+};
+// Запускаем функцию при прокрутке страницы
+window.addEventListener('scroll', function() {
+  Visible (element);
+});
+// А также запустим функцию сразу. А то вдруг, элемент изначально видно
+Visible (element);
+
+</script>
 </body>
 </html>
