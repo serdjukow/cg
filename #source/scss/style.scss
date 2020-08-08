@@ -176,14 +176,14 @@ section {
 .news h1 {
 	color: #e96656;
 }
-.thumb-wrap {
+
+.video__container {
   position: relative;
   padding-bottom: 56.25%; /* задаёт высоту контейнера для 16:9 (если 4:3 — 75%) */
   height: 0;
   overflow: hidden;
 }
-.thumb-wrap iframe,
-.thumb-wrap video {
+.video__container video {
   position: absolute;
   top: 0;
   left: 0;

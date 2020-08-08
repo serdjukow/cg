@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="ru">
-
 <head>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,47 +11,16 @@
 </head>
 <body>
 	<main class="main">
-		<!----------news----------->
-		<section class="news">
+		<!----------our-services----------->
+		<section class="our-services">
 			<div class="">
 				<h1>
 					<a id="services" href="#"></a>
 					Our Services
 				</h1>
-				<div class="thumb-wrap">
-					<!------news-block------->
-					<iframe width="100%" height="720"
-						src="https://www.youtube.com/embed/MptK06RjP0M?rel=0" frameborder="0"
-						allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-					<!-----/news-block------->
-				</div>
-			</div>
-		</section>
-		<section class="news">
-			<div class="wrapper">
-				<h1>
-					<a id="services" href="#"></a>
-					Our Services
-				</h1>
-				<div class="thumb-wrap">
-					<!------news-block------->
-					<iframe width="100%" height="720"
-						src="https://www.youtube.com/embed/MptK06RjP0M?rel=0" frameborder="0"
-						allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-					<!-----/news-block------->
-				</div>
-			</div>
-		</section>
-		<!----------/news----------->
-		<section class="news">
-			<div class="">
-				<h1>
-					<a id="services" href="#"></a>
-					Our Services
-				</h1>
-				<div  class="thumb-wrap">
-					<!------news-block------->
-					<video id="target" controls="controls" width="400" height="300" loop>
+				<div  class="video__container">
+					<!------video__container-block------->
+					<video id="target" controls="controls" loop>
 						<source src="video/main_1.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'><!-- MP4 для Safari, IE9, iPhone, iPad, Android, и Windows Phone 7 -->
 						<source src="video/main_1.webm" type='video/webm; codecs="vp8, vorbis"'><!-- WebM/VP8 для Firefox4, Opera, и Chrome -->
 						<source src="video/main_1.ogv" type='video/ogg; codecs="theora, vorbis"'><!-- Ogg/Vorbis для старых версий браузеров Firefox и Opera -->
@@ -60,10 +28,11 @@
 							<param name="movie" value="video/main_1.swf">
 						</object>
 					</video>
-					<!-----/news-block------->
+					<!-----/video__container-block------->
 				</div>
 			</div>
 		</section>
+		<!----------our-services----------->
 		<div class="body_bg">
 			<section class="customers">
 				<div class="wrapper customers-block">
@@ -236,51 +205,9 @@
 				});
 			</script>
 		</div>
-
 	</main>
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 	<script src="js/main.js"></script>
-
-
-
-<script>
-// получаем элемент video
-var videoEl = document.getElementsByTagName('video')[0]
-
-var element = document.querySelector('#target');
-var Visible =  function (target) {
-  // Все позиции элемента
-  var targetPosition = {
-      top: window.pageYOffset + target.getBoundingClientRect().top,
-      left: window.pageXOffset + target.getBoundingClientRect().left,
-      right: window.pageXOffset + target.getBoundingClientRect().right,
-      bottom: window.pageYOffset + target.getBoundingClientRect().bottom
-    },
-    // Получаем позиции окна
-    windowPosition = {
-      top: window.pageYOffset,
-      left: window.pageXOffset,
-      right: window.pageXOffset + document.documentElement.clientWidth,
-      bottom: window.pageYOffset + document.documentElement.clientHeight
-    };
-  if (targetPosition.bottom > windowPosition.top && // Если позиция нижней части элемента 				больше позиции верхней чайти окна, то элемент виден сверху
-    targetPosition.top < windowPosition.bottom && // Если позиция верхней части элемента меньше позиции нижней чайти окна, то элемент виден снизу
-    targetPosition.right > windowPosition.left && // Если позиция правой стороны элемента больше позиции левой части окна, то элемент виден слева
-		targetPosition.left < windowPosition.right) { // Если позиция левой стороны элемента меньше позиции правой чайти окна, то элемент виден справа			
-		// Если элемент полностью видно, то запускаем следующий код
-		videoEl.play();
-  } else {
-    // Если элемент не видно, то запускаем этот код
-    videoEl.pause();
-  };
-};
-// Запускаем функцию при прокрутке страницы
-window.addEventListener('scroll', function() {
-  Visible (element);
-});
-// А также запустим функцию сразу. А то вдруг, элемент изначально видно
-Visible (element);
-
-</script>
+<script src="js/script.js"></script>
 </body>
 </html>
