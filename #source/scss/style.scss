@@ -135,6 +135,24 @@ table {
 	box-sizing: border-box;
 }
 //========================== Null style =============================
+
+.preloader {
+	width: 100%;
+	height: 3px;
+	background-color: #fff;
+	animation: progress-wider 2s ease-in 1;	
+}
+@keyframes progress-wider {
+	0% {
+		width: 0;
+		background-color: rgba(233, 103, 86, 0.7);
+	}
+	70% {
+		width: 70%;
+		background-color: #e96656;
+	}
+}
+
 //========================= Theme css ===============================
 .body_bg {
 	background-image: url(images/5.png);
@@ -173,34 +191,80 @@ section {
 
 
 
-.news h1 {
-	color: #e96656;
-}
-
-.video__container {
-  position: relative;
-  padding-bottom: 56.25%; /* задаёт высоту контейнера для 16:9 (если 4:3 — 75%) */
-  height: 0;
-  overflow: hidden;
-}
-.video__container video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-width: 0;
-  outline-width: 0;
-}
-
-
 //========================= Theme css ===================
+
+.head {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	height: 100vh;
+	
+	}
+	.head::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: url("https://comongames.ru/wp-content/uploads/2016/04/The-Uncertain.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+	z-index: -1;
+}
+.title {
+	mix-blend-mode: multiply;
+	background-color: rgba(0, 0, 0, 0.85);
+	padding:40px 40px 0px 40px;
+	border-radius: 20px 20px 0 0;
+	width: 100%;
+	h1 {
+		color: #fff;
+		font-size: 80px;
+		text-shadow: 0 0 8px rgba(0,0,0,5), 0 2px 4px #e96656;
+		line-height: 1.2;
+	}
+}
+.untertitle {
+	background-color: rgba(0, 0, 0, 0.85);
+	padding:0px 10px 40px 10px;
+	border-radius: 0 0 20px 20px;
+	width: 100%;
+	p {
+		color:#e96656;
+		font-size: 30px;
+		mix-blend-mode: unset;
+		text-align: center;
+		line-height: 1.2;
+	}
+}
 /*================== customers__block ============================== */
 .customers {
+	position: relative;
 	background-color: rgba(0, 0, 0, 0.4);
+	&::before {
+		content:"";
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		display: block;
+		background-image: url("https://comongames.ru/wp-content/uploads/2015/05/Screenshot-61-e1447428323185.jpg");
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+		background-attachment: fixed;
+	}
+	
 	h1 {
 		color: #fff;
 	}
+
 	.customers__row {
 		position: relative;
 		display: flex;
