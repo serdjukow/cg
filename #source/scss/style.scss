@@ -245,24 +245,9 @@ section {
 /*================== customers__block ============================== */
 .customers {
 	position: relative;
-	background-color: rgba(0, 0, 0, 0.4);
-	&::before {
-		content:"";
-		position: absolute;
-		top: 0;
-		left: 0;
-		bottom: 0;
-		right: 0;
-		display: block;
-		background-image: url("https://comongames.ru/wp-content/uploads/2015/05/Screenshot-61-e1447428323185.jpg");
-		background-repeat: no-repeat;
-		background-position: center;
-		background-size: cover;
-		background-attachment: fixed;
-	}
-	
+	background-color: #fff;	
 	h1 {
-		color: #fff;
+		color: #e96656;
 	}
 
 	.customers__row {

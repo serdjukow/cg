@@ -56,11 +56,9 @@ section h1 { text-align: center; padding-bottom: 50px; }
 .untertitle p { color: #e96656; font-size: 30px; mix-blend-mode: unset; text-align: center; line-height: 1.2; }
 
 /*================== customers__block ============================== */
-.customers { position: relative; background-color: rgba(0, 0, 0, 0.4); }
+.customers { position: relative; background-color: #fff; }
 
-.customers::before { content: ""; position: absolute; top: 0; left: 0; bottom: 0; right: 0; display: block; background-image: url("https://comongames.ru/wp-content/uploads/2015/05/Screenshot-61-e1447428323185.jpg"); background-repeat: no-repeat; background-position: center; background-size: cover; background-attachment: fixed; }
-
-.customers h1 { color: #fff; }
+.customers h1 { color: #e96656; }
 
 .customers .customers__row { position: relative; display: -webkit-box; display: -ms-flexbox; display: flex; -ms-flex-wrap: wrap; flex-wrap: wrap; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; height: 100%; }
 
