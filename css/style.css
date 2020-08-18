@@ -1,4 +1,3 @@
-@charset "UTF-8";
 html,
 body,
 div,
@@ -215,26 +214,67 @@ section h1 {
   padding-bottom: 50px;
 }
 
-.news h1 {
-  color: #e96656;
-}
-
-.video__container {
+.head {
   position: relative;
-  padding-bottom: 56.25%;
-  /* задаёт высоту контейнера для 16:9 (если 4:3 — 75%) */
-  height: 0;
-  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100vh;
 }
 
-.video__container video {
+.head::before {
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  border-width: 0;
-  outline-width: 0;
+  background: url("https://comongames.ru/wp-content/uploads/2016/04/The-Uncertain.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  z-index: -1;
+}
+
+.title {
+  mix-blend-mode: multiply;
+  background-color: rgba(0, 0, 0, 0.85);
+  padding: 40px 40px 0px 40px;
+  border-radius: 20px 20px 0 0;
+  width: 100%;
+}
+
+.title h1 {
+  color: #fff;
+  font-size: 80px;
+  text-shadow: 0 0 8px black, 0 2px 4px #e96656;
+  line-height: 1.2;
+}
+
+.untertitle {
+  background-color: rgba(0, 0, 0, 0.85);
+  padding: 0px 10px 40px 10px;
+  border-radius: 0 0 20px 20px;
+  width: 100%;
+}
+
+.untertitle p {
+  color: #e96656;
+  font-size: 30px;
+  mix-blend-mode: unset;
+  text-align: center;
+  line-height: 1.2;
 }
 
 /*================== customers__block ============================== */
