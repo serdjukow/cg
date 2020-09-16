@@ -215,13 +215,14 @@ section {
 	background-position: center;
 	background-attachment: fixed;
 	z-index: -1;
-}
+	}
 .title {
 	mix-blend-mode: multiply;
 	background-color: rgba(0, 0, 0, 0.85);
 	padding:40px 40px 0px 40px;
 	border-radius: 20px 20px 0 0;
 	width: 100%;
+	border: 2px solid #e96656;
 	h1 {
 		color: #fff;
 		font-size: 80px;
