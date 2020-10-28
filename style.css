@@ -2126,11 +2126,11 @@ section h1 { text-align: center; padding-bottom: 50px; }
 
 .gallery__row { display: -ms-grid; display: grid; -ms-grid-columns: 1fr 1fr 1fr 1fr; grid-template-columns: 1fr 1fr 1fr 1fr; grid-column-gap: 15px; grid-row-gap: 15px; position: relative; }
 
-.gallery__element { display: block; position: relative; display: block; -webkit-transition: all 0.3s ease-in-out; -o-transition: all 0.3s ease-in-out; transition: all 0.3s ease-in-out; border: 6px solid #bfe2ff; -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2), 0 4px 6px rgba(0, 0, 0, 0.2); box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2), 0 4px 6px rgba(0, 0, 0, 0.2); margin: 20px 0; }
+.gallery__element { display: block; position: relative; display: block; -webkit-transition: all 0.3s ease-in-out; -o-transition: all 0.3s ease-in-out; transition: all 0.3s ease-in-out; -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2), 0 4px 6px rgba(0, 0, 0, 0.2); box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2), 0 4px 6px rgba(0, 0, 0, 0.2); margin: 20px 0; }
 
 .gallery__element img { display: block; max-width: 100%; }
 
-.gallery__element:hover { border: 6px solid #337ab7; }
+.gallery__element:hover { -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3), 0 4px 6px rgba(0, 0, 0, 0.3); box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3), 0 4px 6px rgba(0, 0, 0, 0.3); -webkit-transform: scale(1.02); -ms-transform: scale(1.02); transform: scale(1.02); }
 
 body.compensate-for-scrollbar { overflow: hidden; }
 
